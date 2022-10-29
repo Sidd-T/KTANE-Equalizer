@@ -1,0 +1,252 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Equalizer — Keep Talking and Nobody Explodes Module</title>
+    <meta name="viewport" content="initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <script src="js/ktane-utils.js"></script>
+</head>
+<body>
+    <div class="section">
+        <div class="page page-bg-01">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">Equalizer</span>
+            </div>
+            <div class="page-content">
+                <img src="img/Component/Equalizer.svg" class="diagram">
+                <h2>On the Subject of Equalizer</h2>
+                <p class="flavour-text">Write music eat soap</p>
+
+                <ul>
+                    <li>To solve this module, find appropriate settings for the Equalizer (EQ) </li>
+                    <li>This EQ has three frequency 'bands': low, mid, and high.</li>
+                    <li>Each band represents a range of frequency between 10 Hz to 10000 Hz</li>
+                    <li>The EQ has controls for the gain of each band, the top of the low band, the bottom of the high band, and a choice for 24 dB or 48 dB roll-off</li>
+                    <li>EQ'ing is done to bring out the sound of a certain instrument, which must be determined along with a genre.</li>
+                    <li>Once appropriate settings are input, press "Bypass" to submit the answer.</li>
+                    <li>An wrong answer yields a strike. The correct answer remains unchanged.</li>
+                    <li>Other necessary info is found in <strong>Appendix EQ3: Instrument & EQ Data</strong>.</li>
+                </ul>
+
+                <h3>Determining the Instrument</h3>
+                <p>The instrument can be determined as follows:</p>
+                <p>If the bomb has a parallel port, the instrument is <em>Piano.</em> <br>
+                Otherwise, if there is a lit FRK or CAR indicator, the instrument is <em>Piccolo.</em><br>
+                Otherwise, if the serial number has <strong>any</strong> of "VIOLN", the instrument is <em>Violin.</em><br>
+                Otherwise, check the increment used in any of the gain screens:
+                <ul>
+                    <li>If the increment is 1, the instrument is <em>Bass.</em></li>
+                    <li>Otherwise, the instrument is <em>Drums.</em></li>
+                </ul>
+
+                <h3>Determining the Genre</h3>
+                <p>The genre is determined based on the instrument. Once the instrument has been found, use the following table to determine the genre.
+                    Use the number of batteries on the bomb to determine what row of the table to search. Some instruments do not have a genre and are
+                    EQ'd similarily across genres, indicated by "N/A" in the table.
+                </p>
+
+                <table style="border:1px solid black;margin-left:auto;margin-right:auto;">
+                    <tbody>
+                        <tr>
+                            <th><strong><em></em></strong></th>
+                            <th><strong><em>Piano</em></strong></th>
+                            <th><strong><em>Piccolo</em></strong></th>
+                            <th><strong><em>Violin</em></strong></th>
+                            <th><strong><em>Bass</em></strong></th>
+                            <th><strong><em>Drums</em></strong></th>
+                        </tr>
+                        <tr>
+                            <td><strong><em>0 or 1</em></strong></td>
+                            <td>Jazz</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            <td>EDM</td>
+                            <td>Rock</td>
+                        </tr>
+                        <tr>
+                            <td><strong><em>2 or 3</em></strong></td>
+                            <td>Anime</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            <td>Jazz</td>
+                            <td>Trap</td>
+                        </tr>
+                        <tr>
+                            <td><strong><em>4+</em></strong></td>
+                            <td>Classical</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            <td>Rock</td>
+                            <td>Jazz</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="page-footer relative-footer">Page 1 of 3</div>
+        </div>
+        <div class="page page-bg-02">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">Equalizer</span>
+            </div>
+            <div class="page-content">
+                <h3>Equalization</h3>
+                <p>Once you have determined the instrument and genre, follow the rules below to input appropriate settings.
+                    Remember to use <strong>Appendix EQ3: Instrument & EQ Data</strong>.
+                </p>
+                <ul>
+                    <li>Set the low frequency and/or high frequency split(s) to emcompass the instrument's average frequency in the correct band.
+                    </li><br>
+                    <li>If the instrument's average frequency is in the Mid band, do not mute the Low and High bands,
+                         and keep their gains lower than the Mid band.</li><br>
+                    
+                    <li>Then, adjust the gains of the three bands so that the main band encompassing the instrument's average frequency is the highest. 
+                        Then, based on the genre, adjust the other bands according to the chart below.</li><br>
+                    <li>If the high band is cut, use the 48 dB filter roll-off, otherwise use 24 dB.</li>
+                    <li>Remember that bands do not have to be exact, but only have to contain the frequencies required</li>
+                </ul>
+
+
+                <table style="border:1px solid black;margin-left:auto;margin-right:auto;">
+                    <tbody>
+                        <tr>
+                            <th><strong><em>Instrument</em></strong></th>
+                            <th><strong><em>Genre</em></strong></th>
+                            <th><strong><em>Cut</em></strong></th>
+                            <th><strong><em>Secondary Band</em></strong></th>
+                            <th><strong><em>Secondary Band Gain</em></strong></th>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">Piano</td>
+                            <td>Jazz</td>
+                            <td>None</td>
+                            <td>Low, below 200 Hz</td>
+                            <td>-3 dB from High Band</td>
+                        </tr>
+                        <tr>
+                            <td>Anime</td>
+                            <td>Low, below 200 Hz</td>
+                            <td>High, above 1400 Hz</td>
+                            <td>&lt 3 dB difference from Mid</td>
+                        </tr>
+                        <tr>
+                            <td>Classical</td>
+                            <td>None</td>
+                            <td>None</td>
+                            <td>None</td>
+                        </tr>
+                        <tr>
+                            <td>Piccolo</td>
+                            <td>None</td>
+                            <td>Low, below 500 Hz</td>
+                            <td>Mid, above 500 Hz</td>
+                            <td>&lt 5 dB difference from High</td>
+                        </tr>
+                        <tr>
+                            <td>Violin</td>
+                            <td>None</td>
+                            <td>None</td>
+                            <td>None</td>
+                            <td>None</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">Bass</td>
+                            <td>EDM</td>
+                            <td>High, above 1600 Hz</td>
+                            <td>Mid</td>
+                            <td>-4 dB from Low</td>
+                        </tr>
+                        <tr>
+                            <td>Jazz</td>
+                            <td>High, above 2100 Hz</td>
+                            <td>Mid</td>
+                            <td>&lt 3 dB difference from Low</td>
+                        </tr>
+                        <tr>
+                            <td>Rock</td>
+                            <td>High, above 2100 Hz</td>
+                            <td>Mid</td>
+                            <td>&lt 4 dB difference from Low</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">Drums</td>
+                            <td>Rock</td>
+                            <td>High, above 2000 Hz</td>
+                            <td>Mid, below 2000 Hz</td>
+                            <td>&lt 4 dB difference from Low</td>
+                        </tr>
+                        <tr>
+                            <td>Trap</td>
+                            <td>High, above 1800 Hz</td>
+                            <td>Mid</td>
+                            <td>-4 dB from Low</td>
+                        </tr>
+                        <tr>
+                            <td>Jazz</td>
+                            <td>None</td>
+                            <td>Mid, Below 2000 Hz</td>
+                            <td>&lt 3 dB difference from Low</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+            <div class="page-footer relative-footer">Page 2 of 3</div>
+        </div>
+        <div class="page page-bg-03">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">Appendix EQ3</span>
+            </div>
+            <div class="page-content">
+                <h2>Appendix EQ3: Instrument & EQ Data</h2>
+
+                <h3>EQ3.1: Instruments and Average Frequency</h3>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th><strong><em>Instrument</em></strong></th>
+                            <th><strong><em>Average Frequency (Hz)</em></strong></th>
+                            <th><strong><em>Classification</em></strong></th>
+                        </tr>
+                        <tr>
+                            <td>Piano</td>
+                            <td>~440</td>
+                            <td>Mid</td>
+                        </tr>
+                        <tr>
+                            <td>Piccolo</td>
+                            <td>~1600</td>
+                            <td>High</td>
+                        </tr>
+                        <tr>
+                            <td>Violin</td>
+                            <td>~525</td>
+                            <td>Mid</td>
+                        </tr>
+                        <tr>
+                            <td>Bass</td>
+                            <td>~250</td>
+                            <td>Low
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Drums</td>
+                            <td>~110</td>
+                            <td>Low</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="page-footer relative-footer">Page 3 of 3</div>
+        </div>
+    </div>
+</body>
+</html>

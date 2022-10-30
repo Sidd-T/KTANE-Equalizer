@@ -4491,7 +4491,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1255777246870074}
-  m_Text: 5000 Hz
+  m_Text: 
   m_OffsetZ: 0
   m_CharacterSize: 0.25
   m_LineSpacing: 1
@@ -4554,7 +4554,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1527877872082978}
-  m_Text: 100 Hz
+  m_Text: 
   m_OffsetZ: 0
   m_CharacterSize: 0.25
   m_LineSpacing: 1
@@ -4638,7 +4638,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1639909100437792}
-  m_Text: +0 dB
+  m_Text: 
   m_OffsetZ: 0
   m_CharacterSize: 0.25
   m_LineSpacing: 1
@@ -4743,7 +4743,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1610699292817598}
-  m_Text: +0 dB
+  m_Text: 
   m_OffsetZ: 0
   m_CharacterSize: 0.25
   m_LineSpacing: 1
@@ -4953,7 +4953,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1846025906904890}
-  m_Text: +0 dB
+  m_Text: 
   m_OffsetZ: 0
   m_CharacterSize: 0.25
   m_LineSpacing: 1
@@ -5922,6 +5922,7 @@ MonoBehaviour:
   - {fileID: 23788982530973262}
   - {fileID: 23762189157904914}
   - {fileID: 23056197614200328}
+  background: {fileID: 23386849471894322}
   lowFreq: {fileID: 102243728970588554}
   hiFreq: {fileID: 102096886663485968}
   gains:

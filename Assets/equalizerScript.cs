@@ -13,6 +13,13 @@ public class equalizerScript : MonoBehaviour {
 
 	public KMSelectable[] btn;
 	public MeshRenderer[] btnColours;
+	public MeshRenderer background;
+	private readonly Color[] backgroundColours = {
+		new Color(0.52157f, 0.52157f, 0.52157f, 1f),
+		new Color(0.63137f, 0f, 0f, 1f),
+		new Color(0.55294f, 0.55294f, 1f, 1f),
+	};
+	private int bgColourCode;
 	private Color onColour = new Color(1f, 0.54902f, 0.0666666f, 1f);
 	private Color offColour = new Color(0.69803f, 0.69803f, 0.69803f, 1f);
 	private bool[] btnStatus = {true, true, true, true, false, true};
@@ -46,6 +53,7 @@ public class equalizerScript : MonoBehaviour {
 		{"Rock", "Trap", "Jazz"},
 	}; 
 	private int genreCode;
+	
 
 	private readonly int[] avgFreqs = {440, 1600, 525, 250, 110};
 	private readonly string[] classifications = {"mid", "high", "mid", "low", "low"};
@@ -482,6 +490,7 @@ public class equalizerScript : MonoBehaviour {
 	void Init(){
 
 		Debug.LogFormat("Equalizer {0}:", moduleID);
+		setBackgroundColour();
 		setInitButtons();
 		setInitGains();
 		setInitFreqSplits();
@@ -492,6 +501,13 @@ public class equalizerScript : MonoBehaviour {
 		lightsOn = true;
 	}
 	
+	void setBackgroundColour(){
+		int r = UnityEngine.Random.Range(0, 3);
+
+		background.GetComponent<MeshRenderer>().material.color = backgroundColours[r];
+		bgColourCode = r;
+	}
+
 	void setInitButtons(){
 
 		Debug.LogFormat("Equalizer {0}: Setting buttons", moduleID);
@@ -566,25 +582,26 @@ public class equalizerScript : MonoBehaviour {
 	void getInstrument(){
 
 		Debug.LogFormat("Equalizer {0}: Getting the instrument...", moduleID);
+		string temp = string.Join("", Bomb.GetIndicators().ToArray());
 
 		if (Bomb.IsPortPresent(Port.Parallel)){
 			instCode = 0;
 			Debug.LogFormat("Equalizer {0}: The instrument is {1}, instCode is {2}", moduleID, instruments[instCode], instCode);
 		}
-		else if (Bomb.IsIndicatorOn(Indicator.CAR) || Bomb.IsIndicatorOn(Indicator.FRK)){
-			instCode = 1;
-			Debug.LogFormat("Equalizer {0}: The instrument is {1}, instCode is {2}", moduleID, instruments[instCode], instCode);
-		}
-		else if (Bomb.GetSerialNumberLetters().Any("VIOLN".Contains)){
-			instCode = 2;
-			Debug.LogFormat("Equalizer {0}: The instrument is {1}, instCode is {2}", moduleID, instruments[instCode], instCode);
-		}
-		else if (increment == 1){
+		else if (temp.Any("BAS".Contains)){
 			instCode = 3;
 			Debug.LogFormat("Equalizer {0}: The instrument is {1}, instCode is {2}", moduleID, instruments[instCode], instCode);
 		}
-		else{
+		else if (Bomb.GetSerialNumberLetters().Any("DRUMS".Contains)){
 			instCode = 4;
+			Debug.LogFormat("Equalizer {0}: The instrument is {1}, instCode is {2}", moduleID, instruments[instCode], instCode);
+		}
+		else if (increment == 1){
+			instCode = 1;
+			Debug.LogFormat("Equalizer {0}: The instrument is {1}, instCode is {2}", moduleID, instruments[instCode], instCode);
+		}
+		else{
+			instCode = 2;
 			Debug.LogFormat("Equalizer {0}: The instrument is {1}, instCode is {2}", moduleID, instruments[instCode], instCode);
 		}
 
@@ -593,15 +610,14 @@ public class equalizerScript : MonoBehaviour {
 
 	void getGenre(int instCode){
 
-		int count = Bomb.GetBatteryCount();
-		Debug.LogFormat("Equalizer {0}: Getting the genre, the instCode is {1}, there are {2} batteries", moduleID, instCode, count);
+		Debug.LogFormat("Equalizer {0}: Getting the genre, the instCode is {1}, the colour code is {2} ", moduleID, instCode, bgColourCode);
 		
 
-		if (count == 0 || count == 1){
+		if (bgColourCode == 0){
 			genreCode = 0;
 			Debug.LogFormat("Equalizer {0}: The genre is {1}...", moduleID, genres[instCode, genreCode]);
 		}
-		else if (count == 2 || count == 3){
+		else if (bgColourCode == 1){
 			genreCode = 1;
 			Debug.LogFormat("Equalizer {0}: The genre is {1}...", moduleID, genres[instCode, genreCode]);
 		}

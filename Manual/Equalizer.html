@@ -36,17 +36,17 @@
                 <h3>Determining the Instrument</h3>
                 <p>The instrument can be determined as follows:</p>
                 <p>If the bomb has a parallel port, the instrument is <em>Piano.</em> <br>
-                Otherwise, if there is a lit FRK or CAR indicator, the instrument is <em>Piccolo.</em><br>
-                Otherwise, if the serial number has <strong>any</strong> of "VIOLN", the instrument is <em>Violin.</em><br>
+                Otherwise, if any indicators contain any of "BASS", the instrument is <em>Bass.</em><br>
+                Otherwise, if the serial number has any of "DRUMS", the instrument is <em>Drums.</em><br>
                 Otherwise, check the increment used in any of the gain screens:
                 <ul>
-                    <li>If the increment is 1, the instrument is <em>Bass.</em></li>
-                    <li>Otherwise, the instrument is <em>Drums.</em></li>
+                    <li>If the increment is 1, the instrument is <em>Piccolo.</em></li>
+                    <li>Otherwise, the instrument is <em>Violin.</em></li>
                 </ul>
 
                 <h3>Determining the Genre</h3>
                 <p>The genre is determined based on the instrument. Once the instrument has been found, use the following table to determine the genre.
-                    Use the number of batteries on the bomb to determine what row of the table to search. Some instruments do not have a genre and are
+                    Use the colour of the module to determine what row of the table to search. Some instruments do not have a genre and are
                     EQ'd similarily across genres, indicated by "N/A" in the table.
                 </p>
 
@@ -55,34 +55,38 @@
                         <tr>
                             <th><strong><em></em></strong></th>
                             <th><strong><em>Piano</em></strong></th>
-                            <th><strong><em>Piccolo</em></strong></th>
-                            <th><strong><em>Violin</em></strong></th>
                             <th><strong><em>Bass</em></strong></th>
                             <th><strong><em>Drums</em></strong></th>
+                            <th><strong><em>Piccolo</em></strong></th>
+                            <th><strong><em>Violin</em></strong></th>
+                            
                         </tr>
                         <tr>
-                            <td><strong><em>0 or 1</em></strong></td>
+                            <td><strong><em>Grey</em></strong></td>
                             <td>Jazz</td>
-                            <td>N/A</td>
-                            <td>N/A</td>
                             <td>EDM</td>
                             <td>Rock</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            
                         </tr>
                         <tr>
-                            <td><strong><em>2 or 3</em></strong></td>
+                            <td><strong><em>Red</em></strong></td>
                             <td>Anime</td>
-                            <td>N/A</td>
-                            <td>N/A</td>
                             <td>Jazz</td>
                             <td>Trap</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            
                         </tr>
                         <tr>
-                            <td><strong><em>4+</em></strong></td>
+                            <td><strong><em>Purple</em></strong></td>
                             <td>Classical</td>
-                            <td>N/A</td>
-                            <td>N/A</td>
                             <td>Rock</td>
                             <td>Jazz</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            
                         </tr>
                     </tbody>
                 </table>
@@ -97,19 +101,18 @@
             </div>
             <div class="page-content">
                 <h3>Equalization</h3>
-                <p>Once you have determined the instrument and genre, follow the rules below to input appropriate settings.
-                    Remember to use <strong>Appendix EQ3: Instrument & EQ Data</strong>.
+                <p>After determining the instrument and genre, use <strong>Appendix EQ3: Instrument & EQ Data</strong> with the rules below to find appropriate settings.
                 </p>
                 <ul>
                     <li>Set the low frequency and/or high frequency split(s) to emcompass the instrument's average frequency in the correct band.
-                    </li><br>
+                    </li>
                     <li>If the instrument's average frequency is in the Mid band, do not mute the Low and High bands,
-                         and keep their gains lower than the Mid band.</li><br>
+                         and keep their gains lower than the Mid band.</li>
                     
                     <li>Then, adjust the gains of the three bands so that the main band encompassing the instrument's average frequency is the highest. 
-                        Then, based on the genre, adjust the other bands according to the chart below.</li><br>
+                        Then, based on the genre, adjust the other bands according to the chart below.</li>
                     <li>If the high band is cut, use the 48 dB filter roll-off, otherwise use 24 dB.</li>
-                    <li>Remember that bands do not have to be exact, but only have to contain the frequencies required</li>
+                    <li>Remember that bands do not have to be exact, but only have to contain the frequencies required.</li>
                 </ul>
 
 
@@ -137,20 +140,6 @@
                         </tr>
                         <tr>
                             <td>Classical</td>
-                            <td>None</td>
-                            <td>None</td>
-                            <td>None</td>
-                        </tr>
-                        <tr>
-                            <td>Piccolo</td>
-                            <td>None</td>
-                            <td>Low, below 500 Hz</td>
-                            <td>Mid, above 500 Hz</td>
-                            <td>&lt 5 dB difference from High</td>
-                        </tr>
-                        <tr>
-                            <td>Violin</td>
-                            <td>None</td>
                             <td>None</td>
                             <td>None</td>
                             <td>None</td>
@@ -193,6 +182,20 @@
                             <td>Mid, Below 2000 Hz</td>
                             <td>&lt 3 dB difference from Low</td>
                         </tr>
+                        <tr>
+                            <td>Piccolo</td>
+                            <td>None</td>
+                            <td>Low, below 500 Hz</td>
+                            <td>Mid, above 500 Hz</td>
+                            <td>&lt 5 dB difference from High</td>
+                        </tr>
+                        <tr>
+                            <td>Violin</td>
+                            <td>None</td>
+                            <td>None</td>
+                            <td>None</td>
+                            <td>None</td>
+                        </tr>
                     </tbody>
                 </table>
 
@@ -222,16 +225,6 @@
                             <td>Mid</td>
                         </tr>
                         <tr>
-                            <td>Piccolo</td>
-                            <td>~1600</td>
-                            <td>High</td>
-                        </tr>
-                        <tr>
-                            <td>Violin</td>
-                            <td>~525</td>
-                            <td>Mid</td>
-                        </tr>
-                        <tr>
                             <td>Bass</td>
                             <td>~250</td>
                             <td>Low
@@ -242,6 +235,17 @@
                             <td>~110</td>
                             <td>Low</td>
                         </tr>
+                        <tr>
+                            <td>Piccolo</td>
+                            <td>~1600</td>
+                            <td>High</td>
+                        </tr>
+                        <tr>
+                            <td>Violin</td>
+                            <td>~525</td>
+                            <td>Mid</td>
+                        </tr>
+                        
                     </tbody>
                 </table>
             </div>

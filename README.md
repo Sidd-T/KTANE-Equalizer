@@ -1,1 +1,3 @@
-#[ModKit Wiki](../../wiki)
+##Equalizer Mod for KTane
+
+write music eat soap
